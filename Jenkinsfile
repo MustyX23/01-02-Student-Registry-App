@@ -24,13 +24,6 @@ pipeline {
             }
         }
         
-        stage('Start Application') {
-            steps {
-                echo 'Starting the application...'
-                bat 'npm start &'
-                sleep(time: 5, unit: 'SECONDS')
-            }
-        }
         
         stage('Run Tests') {
             steps {
