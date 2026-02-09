@@ -12,22 +12,22 @@ pipeline {
         stage('Setup Node.js') {
             steps {
                 echo 'Setting up Node.js...'
-                sh 'node --version'
-                sh 'npm --version'
+                bat 'node --version'
+                bat 'npm --version'
             }
         }
         
         stage('Install Dependencies') {
             steps {
                 echo 'Installing dependencies...'
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         
         stage('Start Application') {
             steps {
                 echo 'Starting the application...'
-                sh 'npm start &'
+                bat 'npm start &'
                 sleep(time: 5, unit: 'SECONDS')
             }
         }
@@ -35,7 +35,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo 'Running tests...'
-                sh 'npm test'
+                bat 'npm test'
             }
         }
     }
